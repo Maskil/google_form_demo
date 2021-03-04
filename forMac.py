@@ -472,7 +472,6 @@ def formanswer(root, driver, nickname, link, current_page):
     Label(bottomframe, font=smallfont, fg='purple', text='Author: Bokushu Go').pack(side=LEFT)
     total_question = IntVar()
     total_question.set(num_of_questions)
-    print(current_question.get(),total_question.get())
     if current_question.get() == total_question.get() and total_question.get() == 1:
         prev_button.config(state=DISABLED)
         next_button.config(state=DISABLED)
