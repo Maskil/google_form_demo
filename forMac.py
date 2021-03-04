@@ -779,8 +779,7 @@ def chromedriver_session(root):
 
 def start():
     root = Tk()
-    root.resizable(False, True)
-    root.resizable(0,0)
+    root.resizable(False, False)
     chromedriver_session(root)
     root.mainloop()
 
