@@ -11,7 +11,7 @@ All your responses will **only** be saved **locally** . You can always check you
 2. module pip should be in your system's PATH, you can type pip(Windows) or pip3(Mac OS) in cmd(Windows) or Terminal(Mac OS) to check.
 ```
 // an example for Mac users
-username$ pip3
+someone'sMacBook:~ username$ pip3
 Usage:
 	pip3 <command> [options]
 Commands:
@@ -35,10 +35,10 @@ pip3 install selenium
 - Install Chrome from [here](https://www.google.com/chrome/?brand=CHBD&brand=SZLF&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB6VQeMaSJShxbmZNnXguG7wwkxQgbd_ZItio2ECsqL4e46A0NwwX7AaAmb4EALw_wcB&gclsrc=aw.ds). In Chrome, go to `Settings -> About Chrome` and check the Chrome version *(Ex: 88)*. 
 - Install chromedriver from [here](https://chromedriver.chromium.org/downloads). Make sure to download the chromedriver accordingly to your Chrome version. Since the program requires the location of the chromedriver, please be aware where the chromedriver is.
 ## #3 Step: Run the script
-- ### Note: There are various ways to run a Python script. The method below is just an example.
-- ### Open `formfiller.py` by `IDLE`. Noting that `IDLE` is a basic IDE automatically installed while installing Python. The script of the `formfiller.py` should be readable.
-- ### Press F5 from the keyboard button to run the script.
-### After successfully running the script, there will be a few more instructions inside the program. If you meet any issue not listed in [FAQ](#faq), please contact the author by [email](#about-the-author) so the problem can be fixed ASAP.<br/><br/>
+1. Note: There are various ways to run a Python script. The method below is just an example.
+2. Open `formfiller.py` by `IDLE`. Noting that `IDLE` is a basic IDE automatically installed while installing Python. The script of the `formfiller.py` should be readable.
+- Press F5 from the keyboard button to run the script.
+After successfully running the script, there will be a few more instructions inside the program. If you meet any issue not listed in [FAQ](#faq), please contact the author by [email](#about-the-author) so the problem can be fixed ASAP.<br/><br/>
 
 # FAQ
 ## Q: I messed up with the first three steps!
