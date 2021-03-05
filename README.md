@@ -1,23 +1,39 @@
 # Thank you for using Form Filler!
 Thank you for downloading Form Filler and I hope you have a good time using it.
-Since this program is all coded by Python but mainly tested on a Windows device, running on Linux or mobile devices is not recommended. <br>Check [Privacy Policies](#privacy-policies) if you are concerned about your datas.<br>Check [How to use it](#how-to-use-it) if you are ready!
-Check [FAQ](#faq) if you are confused. Note: This FAQ is only for initializing the evironment and will not be updated. New and more detailed FAQs will be uploaded on GitHub.<br/><br/>
+Since this program is all coded by Python but mainly tested on a Windows device, running on Linux or mobile devices is not recommended.<br>Check [Privacy Policies](#privacy-policies) if you are concerned about your datas.<br>Check [How to use it](#how-to-use-it) if you are ready!<br></brCheck>Check [FAQ](#faq) if you are confused. <br>**Note: FAQ in this page is only for initializing the evironment and will not be updated. New and more detailed FAQs will be uploaded on GitHub.**<br/><br/>
 
 # Privacy Policies
-### All your responses will be saved **locally** and the application **only** brings you a user-friendly interface to complete the recordings of your responses. You can always check your data in the txt files saved in the folder.  <br/><br/>
+All your responses will **only** be saved **locally** . You can always check your data in the txt files saved in the folder.  <br/><br/>
 
 # How to use it
 ## #1 Step: Setup Python. 
-- ### Install Python from [here](https://www.python.org/downloads/). Make sure the Python version is above **3.8**
-- ### Open cmd or Terminal and type `pip` or `pip3`. If either of them exist, install necessary Python Modules by typing beginning with `pip` or `pip3`. Make sure to move to a new line after typing each line.<br/>
+1. Install Python from [here](https://www.python.org/downloads/). Make sure the Python version is above **3.8**. Duing the installation, make sure to check the box for Python being in PATH.
+2. module pip should be in your system's PATH, you can type pip(Windows) or pip3(Mac OS) in cmd(Windows) or Terminal(Mac OS) to check.
 ```
-    (pip or pip3) install beautifulsoup4
-    (pip or pip3) install lxml
-    (pip or pip3) install selenium
+// an example for Mac users
+username$ pip3
+Usage:
+		pip3 <command> [options]
+Commands:
+		etc...
 ```
+- #### For Windows
+```
+    pip install bs4
+    pip install lxml
+    pip install selenium
+```
+
+- #### For Mac
+```
+    pip3 install bs4
+    pip3 install lxml
+    pip3 install selenium
+```
+
 ## #2 Step: Setup chromedriver
-- ### Install Chrome from [here](https://www.google.com/chrome/?brand=CHBD&brand=SZLF&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB6VQeMaSJShxbmZNnXguG7wwkxQgbd_ZItio2ECsqL4e46A0NwwX7AaAmb4EALw_wcB&gclsrc=aw.ds). In Chrome, go to `Settings -> About Chrome` and check the Chrome version *(Ex: 88)*. 
-- ### Install chromedriver from [here](https://chromedriver.chromium.org/downloads). Make sure to download the chromedriver accordingly to your Chrome version. Since the program requires the location of the chromedriver, please be aware where the chromedriver is.
+- Install Chrome from [here](https://www.google.com/chrome/?brand=CHBD&brand=SZLF&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB6VQeMaSJShxbmZNnXguG7wwkxQgbd_ZItio2ECsqL4e46A0NwwX7AaAmb4EALw_wcB&gclsrc=aw.ds). In Chrome, go to `Settings -> About Chrome` and check the Chrome version *(Ex: 88)*. 
+- Install chromedriver from [here](https://chromedriver.chromium.org/downloads). Make sure to download the chromedriver accordingly to your Chrome version. Since the program requires the location of the chromedriver, please be aware where the chromedriver is.
 ## #3 Step: Run the script
 - ### Note: There are various ways to run a Python script. The method below is just an example.
 - ### Open `formfiller.py` by `IDLE`. Noting that `IDLE` is a basic IDE automatically installed while installing Python. The script of the `formfiller.py` should be readable.
