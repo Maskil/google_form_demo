@@ -1,9 +1,9 @@
 # Thank you for using Form Filler!
-### Thank you for downloading Form Filler and I hope you have a good time using it.
-### Since this program is all coded by Python but mainly tested on a Windows device, running on Linux or mobile devices is not recommended. 
-### Check [Privacy Policies](#privacy-policies) if you are concerned about your datas.
-### Check [How to use it](#how-to-use-it) if you are ready!
-### Check [FAQ](#faq) if you are confused. Note: This FAQ is only for initializing the evironment and will not be updated. New and more detailed FAQs will be uploaded on GitHub.<br/><br/>
+Thank you for downloading Form Filler and I hope you have a good time using it.
+Since this program is all coded by Python but mainly tested on a Windows device, running on Linux or mobile devices is not recommended. 
+Check [Privacy Policies](#privacy-policies) if you are concerned about your datas.
+Check [How to use it](#how-to-use-it) if you are ready!
+Check [FAQ](#faq) if you are confused. Note: This FAQ is only for initializing the evironment and will not be updated. New and more detailed FAQs will be uploaded on GitHub.<br/><br/>
 
 # Privacy Policies
 ### All your responses will be saved **locally** and the application **only** brings you a user-friendly interface to complete the recordings of your responses. You can always check your data in the txt files saved in the folder.  <br/><br/>
