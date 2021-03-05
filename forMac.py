@@ -122,13 +122,19 @@ def login_window(root, driver, nickname, link, current_page):
         driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button').click()
         while tmpurl == driver.current_url:
             time.sleep(0.5)
-        tmp_url = driver.current_url
-        driver.find_element_by_name("password").send_keys(password)
-        driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button').click()
+        tmpurl = driver.current_url
+        while True:
+            try:
+                driver.find_element_by_name("password").send_keys(password)
+                driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button').click()
+                break
+            except:
+                continue
         while tmp_url == driver.current_url:
             time.sleep(0.5)
         container.destroy()
         formanswer(root, driver, nickname, link, current_page)
+        
     def show_unshow():
         if password_label.cget("show") == '*':
             password_label.config(show='')
