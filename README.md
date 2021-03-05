@@ -13,22 +13,22 @@ All your responses will **only** be saved **locally** . You can always check you
 // an example for Mac users
 username$ pip3
 Usage:
-		pip3 <command> [options]
+	pip3 <command> [options]
 Commands:
-		etc...
+	etc...
 ```
 - #### For Windows
 ```
-    pip install bs4
-    pip install lxml
-    pip install selenium
+pip install bs4
+pip install lxml
+pip install selenium
 ```
 
 - #### For Mac
 ```
-    pip3 install bs4
-    pip3 install lxml
-    pip3 install selenium
+pip3 install bs4
+pip3 install lxml
+pip3 install selenium
 ```
 
 ## #2 Step: Setup chromedriver
