@@ -907,6 +907,9 @@ def main(root, driver):
         driver.close()
         main(root, driver)
 
+    option = webdriver.ChromeOptions()
+    option.add_argument("-incognito")
+    driver = webdriver.Chrome(chromedriverLocation['location'], options=option)
     Button(frame, font=midfont, text='Redo', command=lambda: redo()).pack(side=BOTTOM)
     Label(frame, font=midfont, text='').pack()
     nameorlinkbtn = Button(nameorlink, font=midfont, text="Confirm", command=lambda: firststep_submit())
