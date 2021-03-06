@@ -127,7 +127,6 @@ class ScrollableFrame(Frame):
 
 
 def login_window(root, driver, nickname, link, current_page):
-    driver.get_screenshot_as_file('ss.png')
     root.title('Login')
     container = Frame(bd=3, relief=SUNKEN)
     email_input = StringVar()
@@ -340,10 +339,15 @@ def formanswer(root, driver, nickname, link, current_page):
             if submit_pass:
                 form_submit[-1].click()
                 if len(driver.find_elements_by_class_name('freebirdFormviewerComponentsQuestionBaseTitle')) == 0:
+                    def goodbye():
+                        for widget in root.winfo_children():
+                            widget.destroy()
+                        main(root, driver)
                     for widget in root.winfo_children():
                         widget.destroy()
+                    Label(font=bigfont, text='Form submitted.').pack(expand=True)
+                    Button(font=bigfont, text='Go back to Hangar', command=lambda: goodbye()).pack(expand=True)
                     driver.close()
-                    main(root, driver)
                 else:
                     for widget in root.winfo_children():
                         widget.destroy()
@@ -802,6 +806,9 @@ def main(root, driver):
                 error.set('Empty Input or Name not in the list')
 
         def add_another_name(name):
+            if name =='tmp':
+                error.set('tmp is not a valid name. Name anything else.')
+                return
             if name != '':
                 choosename_frame.destroy()
                 Label(frame, font=midfont, fg='green', text='Name: ' + name).pack()
@@ -843,8 +850,7 @@ def main(root, driver):
             addQ = True
             for each in urls:
                 if tmpname == each:
-                    link = urls[each]['url']
-                    driver.get(link)
+                    driver.get(urls[each]['url'])
                     addQ = False
             if addQ:
                 readanswers()
@@ -866,9 +872,9 @@ def main(root, driver):
                             driver.find_elements_by_class_name("quantumWizButtonPaperbuttonContent")[-1].click()
                         except:
                             pass
-                        login_window(root, driver, tmpname, link, current_page)
+                        login_window(root, driver, tmpname, urls[tmpname]['url'], current_page)
                     else:
-                        formanswer(root, driver, tmpname, link, current_page)
+                        formanswer(root, driver, tmpname, urls[tmpname]['url'], current_page)
 
                 def auto_submit():
                     frame.destroy()
@@ -905,6 +911,12 @@ def main(root, driver):
         driver.close()
         main(root, driver)
 
+    option = webdriver.ChromeOptions()
+    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+    option.add_argument(f'user-agent={user_agent}')
+    option.add_argument("-incognito")
+    option.add_argument("-headless")
+    driver = webdriver.Chrome(chromedriverLocation['location'], options=option)
     Button(frame, font=midfont, text='Redo', command=lambda: redo()).pack(side=BOTTOM)
     Label(frame, font=midfont, text='').pack()
     nameorlinkbtn = Button(nameorlink, font=midfont, text="Confirm", command=lambda: firststep_submit())
