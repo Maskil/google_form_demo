@@ -830,9 +830,13 @@ def main(root, driver):
     def firststep_submit():
         readRecord()
         if (not nickname.get() and not url.get()) or (nickname.get() and url.get() and ('docs.google.com' not in url.get())):
-            error.set('Nickname and URL corrupted or both empty')
+            error.set('Invalid URL or Empty Input')
             nickname.set('')
             url.set('')
+            return
+        if nickname.get()=='tmp':
+            error.set('tmp is not a valid name. Name anything else.')
+            nickname.set('')
             return
         if nickname.get() and url.get():
             nameorlink.destroy()
