@@ -38,7 +38,7 @@ pip3 install selenium
 1. Note: There are various ways to run a Python script. The method below is just an example.
 2. Open `formfiller.py` by `IDLE`. Noting that `IDLE` is a basic IDE automatically installed while installing Python. The script of the `formfiller.py` should be readable.
 3. Press F5 from the keyboard button to run the script.
-After successfully running the script, there will be a few more instructions inside the program. If you meet any issue not listed in [FAQ](#faq), please contact the author by [email](#about-the-author) so the problem can be fixed ASAP. <br>
+After successfully running the script, there will be a few more instructions inside the program. If you meet any issue not listed in [FAQ](#faq), please contact the author by [email](#about-the-author) or post an issue on Github so the problem can be fixed ASAP. <br>
 4. There are many alternative ways to open a python file. Google if you are confused. **Make sure the python file is in a independent folder because it will create some other files to save your responses!**<br/><br/>
 
 # Cautions
