@@ -840,6 +840,7 @@ def main(root, driver):
             return
         if nickname.get() and url.get():
             nameorlink.destroy()
+            nameorlink.destroy()
             Label(frame, font=midfont, fg='green', text='Name: ' + nickname.get()).pack()
             Label(frame, font=midfont, fg='green', text='URL: ' + url.get()[:80] + '...').pack()
             howmanypages(url.get(), nickname.get())
@@ -927,6 +928,7 @@ def chromedriver_session(root):
     Label(frame, font=midfont, fg='red', textvariable=error).pack(side=BOTTOM, anchor=W)
     readChrome()
     option = webdriver.ChromeOptions()
+    #  option.add_argument("-incognito")
     option.add_argument("-headless")
 
     def record_location(location_save):
