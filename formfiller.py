@@ -126,18 +126,6 @@ class ScrollableFrame(Frame):
         canvas.pack(side=LEFT, fill=BOTH, expand=True)
 
 
-# class TopPage(Frame):
-#     def __init__(self, container, title, content, **kw):
-#         super().__init__(**kw)
-#         sbl = 25
-#         WrappingLabel(container, text=title, justify=LEFT, fg='red' if '*(Must fill)' in title[-12:] else None).pack()
-#         for i,each in enumerate(content):
-#             WrappingLabel(container, justify=LEFT, text=each).place(x=1,y=25*i)
-#
-#     def show(self):
-#         self.lift()
-
-
 def login_window(root, driver, nickname, link, current_page):
     root.title('Login')
     container = Frame(bd=3, relief=SUNKEN)
@@ -172,7 +160,7 @@ def login_window(root, driver, nickname, link, current_page):
                 continue
         while tmpurl == driver.current_url:
             time.sleep(0.5)
-        if nickname is not None:
+        if nickname != 'tmp':
             readU()
             usernames[nickname] = {'email':email,'password':password}
             writeU()
@@ -340,7 +328,7 @@ def formanswer(root, driver, nickname, link, current_page):
             all_tles.append(qstle)
             all_ctents.append(qsctent)
             all_types.append(qstype)
-        if nickname is not None:
+        if nickname is not 'tmp':
             readRecord()
             records[nickname] = {'titles': all_tles, 'contents': all_ctents, 'types': all_types}
             writeRecord()
@@ -453,7 +441,7 @@ def formanswer(root, driver, nickname, link, current_page):
                 short.config(state=DISABLED)
                 notanswered.remove(current_question.get() - 1)
                 answer_record[current_question.get()] = {'answer':answer_input.get(),'type':'short','location':qsPos}
-            if nickname is not None:
+            if nickname != 'tmp':
                 readanswers()
                 tmpdic = dict(sorted(answer_record.items(),key=lambda item:item[0]))
                 recorded_answers[nickname][int(current_page.get())] = tmpdic
@@ -670,7 +658,7 @@ def main(root, driver):
                 num_of_pages.set(1)
 
         def confirm():
-            if finalname is None:
+            if finalname is 'tmp':
                 frame.destroy()
                 for value, key in urls.items():
                     if key['url'] == finalurl:
@@ -764,7 +752,7 @@ def main(root, driver):
             if str(name_input['state']) == 'disabled':
                 addname_frame.destroy()
                 Label(frame, font=midfont, fg='red', text='RECORD UNAVAILABLE').pack()
-                howmanypages(finalurl, finalname=None)
+                howmanypages(finalurl, finalname='tmp')
             elif str(name_input['state']) == 'normal' and name != '':
                 driver.get(finalurl)
                 addname_frame.destroy()
@@ -834,7 +822,7 @@ def main(root, driver):
         Entry(choosename_frame, font=midfont, width=20, textvariable=name_input_variable).pack()
         Button(bottom_frame, font=midfont, text="Choose", command=lambda: chosename(name_input_variable.get())).pack(side=RIGHT, padx=2, pady=3)
         Button(bottom_frame, font=midfont, text="Add/Reset Name", command=lambda: add_another_name(name_input_variable.get())).pack(side=RIGHT, padx=2, pady=3)
-        Button(bottom_frame, font=midfont, text='Fill without Saving', command=lambda: howmanypages(tmpurl, finalname=None)).pack(side=RIGHT, padx=2, pady=3)
+        Button(bottom_frame, font=midfont, text='Fill without Saving', command=lambda: howmanypages(tmpurl, finalname='tmp')).pack(side=RIGHT, padx=2, pady=3)
         bottom_frame.pack(side=BOTTOM, fill=X, expand=False)
         choosename_frame.pack()
 
