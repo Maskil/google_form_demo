@@ -54,9 +54,18 @@ Delete the line  `option.add_argument("-headless")`.<br>
 
 # FAQ
 ## Q: I messed up with the first three steps!
-- ### A: Use Google.
+A: Use Google.
 ## Q: I'm using Windows and the chromedriver location does not work!
-- ### A: For Windows, you need to put `.exe` at the end of the chromedriver file. For instance, `C:\user\Downloads\chromedriver\chromedriver.exe`<br/>For Mac or Linux, `.formatname` is not required.<br/><br/>
+A: For Windows, you need to put `.exe` at the end of the chromedriver file. For instance, `C:\user\Downloads\chromedriver\chromedriver.exe`<br/>For Mac or Linux, `.formatname` is not required.
+### For Windows
+
+https://user-images.githubusercontent.com/45069462/110214161-bf2e6a00-7ee6-11eb-9af9-d7c64dce2110.mp4
+
+### For Mac OS
+
+
+
+<br/><br/>
 
 # Contact the Author
 email: hg5180028@hiroogakuen.com or makigo613@gmail.com
