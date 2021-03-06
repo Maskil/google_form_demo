@@ -49,12 +49,7 @@ If you type the nickname and the URL address of the form at the same time, you w
 ## Nickname rule
 Users cannot use name `tmp`.
 ## Make Chrome visible
-In the python script, search 'incognito', delete the `#` symbol and delete the line  `option.add_argument("-headless")`.<br>
-It should look like this: 
-```
-option = webdriver.ChromeOptions()
-option.add_argument("-incognito")
-```
+Delete the line  `option.add_argument("-headless")`.<br>
 
 
 # FAQ
