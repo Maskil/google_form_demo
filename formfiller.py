@@ -592,6 +592,7 @@ def auto(root,driver,nickname):
                 lis.append(0)
             tmp += 1
         for i in range(urls[nickname]['pages']-len(lis)): lis.append(0)
+        driver.refresh()
         for each in lis:
             if each == 0:
                 driver.find_elements_by_class_name('appsMaterialWizButtonPaperbuttonContent')[-1].click()
