@@ -328,7 +328,7 @@ def formanswer(root, driver, nickname, link, current_page):
             all_tles.append(qstle)
             all_ctents.append(qsctent)
             all_types.append(qstype)
-        if nickname is not 'tmp':
+        if nickname != 'tmp':
             readRecord()
             records[nickname] = {'titles': all_tles, 'contents': all_ctents, 'types': all_types}
             writeRecord()
@@ -658,7 +658,7 @@ def main(root, driver):
                 num_of_pages.set(1)
 
         def confirm():
-            if finalname is 'tmp':
+            if finalname == 'tmp':
                 frame.destroy()
                 for value, key in urls.items():
                     if key['url'] == finalurl:
