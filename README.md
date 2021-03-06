@@ -44,7 +44,7 @@ After successfully running the script, there will be a few more instructions ins
 # Cautions
 **Sometimes the program will ask you to type your chromedriver location even after you could successfully start the form-filling process. In such cases, simply restart the program and it will be fine.**
 ## Input two information at the same time
-![Screenshot 2021-03-06 230627](https://user-images.githubusercontent.com/45069462/110209561-9d29ed00-7ed0-11eb-82fb-5b4de8489c92.png)
+![Screenshot 2021-03-06 230627](https://user-images.githubusercontent.com/45069462/110209561-9d29ed00-7ed0-11eb-82fb-5b4de8489c92.png)<br>
 If you type the nickname and the URL address of the form at the same time, you will be creating a new response even if the nickname is already saved. In other words, typing the nickname and URL the same times always creating a new response.
 ## Nickname rule
 Users cannot use name `tmp`.
@@ -58,6 +58,5 @@ Delete the line  `option.add_argument("-headless")`.<br>
 ## Q: I'm using Windows and the chromedriver location does not work!
 - ### A: For Windows, you need to put `.exe` at the end of the chromedriver file. For instance, `C:\user\Downloads\chromedriver\chromedriver.exe`<br/>For Mac or Linux, `.formatname` is not required.<br/><br/>
 
-# About the Author
-### email: hg5180028@hiroogakuen.com or makigo613@gmail.com
-### 
+# Contact the Author
+email: hg5180028@hiroogakuen.com or makigo613@gmail.com
