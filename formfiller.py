@@ -132,7 +132,6 @@ def login_window(root, driver, nickname, link, current_page):
     email_input = StringVar()
     password_input = StringVar()
     error = StringVar()
-
     def login(email, password):
         if email == '':
             error.set('Empty Input')
@@ -197,7 +196,6 @@ def login_window(root, driver, nickname, link, current_page):
 def formanswer(root, driver, nickname, link, current_page):
     readRecord()
     readURL()
-
     def readdata():
         global shorts, choices, boxes, longs, form_submit, containers, num_of_questions, all_tles, all_ctents, all_types, must_fill_qs, orderRecord, description
         soup = BeautifulSoup(driver.execute_script("return document.documentElement.innerHTML"), features='lxml')
@@ -638,9 +636,6 @@ def main(root, driver):
     namelabel.pack(side=TOP, anchor=NW, padx=2, pady=2)
     urllabel.pack(side=TOP, anchor=NW, padx=2, pady=2)
     nameorlink.pack()
-    option = webdriver.ChromeOptions()
-    option.add_argument("-headless")
-    driver = webdriver.Chrome(chromedriverLocation['location'], options=option)
     readURL()
     if 'tmp' in urls:
         del urls['tmp']
@@ -928,9 +923,8 @@ def chromedriver_session(root):
     Label(frame, font=midfont, fg='red', textvariable=error).pack(side=BOTTOM, anchor=W)
     readChrome()
     option = webdriver.ChromeOptions()
-    #  option.add_argument("-incognito")
+    option.add_argument("-incognito")
     option.add_argument("-headless")
-
     def record_location(location_save):
         chromedriverLocation['location'] = location_save
         try:
