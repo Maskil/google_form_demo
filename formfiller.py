@@ -200,9 +200,6 @@ def formanswer(root, driver, nickname, link, current_page):
 
     def readdata():
         global shorts, choices, boxes, longs, form_submit, containers, num_of_questions, all_tles, all_ctents, all_types, must_fill_qs, orderRecord, description
-        # if current_page.get() != 1:
-        #     while link == driver.current_url:
-        #         time.sleep(0.5)
         soup = BeautifulSoup(driver.execute_script("return document.documentElement.innerHTML"), features='lxml')
         num_of_questions = len(
             driver.find_elements_by_class_name('freebirdFormviewerComponentsQuestionBaseTitle'))
@@ -328,7 +325,6 @@ def formanswer(root, driver, nickname, link, current_page):
             all_tles.append(qstle)
             all_ctents.append(qsctent)
             all_types.append(qstype)
-        if nickname != 'tmp':
             readRecord()
             records[nickname] = {'titles': all_tles, 'contents': all_ctents, 'types': all_types}
             writeRecord()
@@ -645,6 +641,10 @@ def main(root, driver):
     option = webdriver.ChromeOptions()
     option.add_argument("-headless")
     driver = webdriver.Chrome(chromedriverLocation['location'], options=option)
+    readURL()
+    if 'tmp' in urls:
+        del urls['tmp']
+    writeURL()
 
     def howmanypages(finalurl, finalname):
 
@@ -659,6 +659,8 @@ def main(root, driver):
 
         def confirm():
             if finalname == 'tmp':
+                readURL()
+                urls['tmp'] = {'url': finalurl, 'pages': num_of_pages.get()}
                 frame.destroy()
                 for value, key in urls.items():
                     if key['url'] == finalurl:
@@ -675,8 +677,7 @@ def main(root, driver):
                     formanswer(root, driver, finalname, finalurl, current_page)
                 return
             readURL()
-            content = {'url': finalurl, 'pages': num_of_pages.get()}
-            urls[finalname] = content
+            urls[finalname] = {'url': finalurl, 'pages': num_of_pages.get()}
             for value, key in urls.items():
                 if key['url'] == finalurl:
                     key['pages'] = num_of_pages.get()
