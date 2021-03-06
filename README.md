@@ -64,6 +64,10 @@ https://user-images.githubusercontent.com/45069462/110214161-bf2e6a00-7ee6-11eb-
 ### For Mac OS
 
 
+https://user-images.githubusercontent.com/45069462/110214256-1e8c7a00-7ee7-11eb-8f7b-1fcd32e7e84a.mp4
+
+
+
 
 <br/><br/>
 
