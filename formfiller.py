@@ -127,6 +127,7 @@ class ScrollableFrame(Frame):
 
 
 def login_window(root, driver, nickname, link, current_page):
+    driver.get_screenshot_as_file('ss.png')
     root.title('Login')
     container = Frame(bd=3, relief=SUNKEN)
     email_input = StringVar()
@@ -390,7 +391,6 @@ def formanswer(root, driver, nickname, link, current_page):
                 except:
                     error.set('Not a number')
                     return
-                # print(len(records[nickname]['contents'][current_question.get()-1]))
                 if qsType == 'choice':
                     if int(answer_input.get()) > len(records[nickname]['contents'][current_question.get() - 1]) - 1 or int(answer_input.get()) < 1:
                         error.set('Input out of range')
@@ -500,7 +500,6 @@ def formanswer(root, driver, nickname, link, current_page):
     readdata()
     notanswered = []
 
-    # Bottomframe and positions of answerframe and questionframe
     bottomframe = Frame()
     bottomframe.pack(side=BOTTOM, fill=X, expand=False)
     next_button = Button(bottomframe, font=smallfont, text=" → ", command=next_page)
@@ -518,7 +517,7 @@ def formanswer(root, driver, nickname, link, current_page):
         prev_button.config(state=DISABLED)
     question_num_rec.set(f'Question {current_question.get()}/{total_question.get()}')
     Label(bottomframe, font=smallfont, textvariable=question_num_rec).pack(side=BOTTOM)
-    for i in range(num_of_questions):  # Not answered questions will remain here
+    for i in range(num_of_questions):
         notanswered.append(i)
     magic()
 
@@ -538,7 +537,6 @@ def auto(root,driver,nickname):
         Label(confirm_frame, font=midfont, fg='orange',text='Fill without a Google Account').pack(side=TOP, anchor=NW)
     Label(confirm_frame,font=midfont,text='').pack()
     readanswers()
-    # tmpdic = dict(sorted(recorded_answers[nickname].items()),key=lambda item:item[0])
     for value,key in recorded_answers[nickname].items():
         Label(confirm_frame, font=midfont, text=f"#{value} Page").pack(side=TOP, anchor=NW)
         tmp_frame = Frame(confirm_frame,bd=2,relief=SUNKEN)
@@ -907,9 +905,6 @@ def main(root, driver):
         driver.close()
         main(root, driver)
 
-    option = webdriver.ChromeOptions()
-    option.add_argument("-incognito")
-    driver = webdriver.Chrome(chromedriverLocation['location'], options=option)
     Button(frame, font=midfont, text='Redo', command=lambda: redo()).pack(side=BOTTOM)
     Label(frame, font=midfont, text='').pack()
     nameorlinkbtn = Button(nameorlink, font=midfont, text="Confirm", command=lambda: firststep_submit())
@@ -926,6 +921,8 @@ def chromedriver_session(root):
     Label(frame, font=midfont, fg='red', textvariable=error).pack(side=BOTTOM, anchor=W)
     readChrome()
     option = webdriver.ChromeOptions()
+    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+    option.add_argument(f'user-agent={user_agent}')
     option.add_argument("-incognito")
     option.add_argument("-headless")
     def record_location(location_save):
