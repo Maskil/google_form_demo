@@ -418,7 +418,7 @@ def formanswer(root, driver, nickname, link, current_page):
                         return
                 box_pass = True
                 for each in s:
-                    if not (len(records[nickname]['contents'][current_question.get()]) >= int(each) >= 1):
+                    if not (len(records[nickname]['contents'][current_question.get()-1]) >= int(each) >= 1):
                         box_pass = False
                         error.set('Input out of range')
                         break
