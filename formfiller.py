@@ -470,7 +470,7 @@ def formanswer(root, driver, nickname, link, current_page):
         questionframe.destroy()
         questionframe = ScrollableFrame(root)
         questionframe.pack(side=BOTTOM, fill=BOTH, expand=True)
-        tlepack = Label(questionframe.scrollable_frame, font=smallfont, wraplength=810, justify=LEFT, text=all_tles[current_question.get() - 1])
+        tlepack = Label(questionframe.scrollable_frame, font=smallfont, wraplength=root.winfo_width()-50, justify=LEFT, text=all_tles[current_question.get() - 1])
         tlepack.pack(side=TOP, anchor=W)
         for each in all_ctents[current_question.get() - 1]:
             Label(questionframe.scrollable_frame, font=smallfont, text=each).pack(side=TOP, anchor=W)
