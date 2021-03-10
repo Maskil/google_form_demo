@@ -34,7 +34,11 @@ pip3 install selenium
 ## #2 Step: Setup chromedriver
 1. Install Chrome from [here](https://www.google.com/chrome/?brand=CHBD&brand=SZLF&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB6VQeMaSJShxbmZNnXguG7wwkxQgbd_ZItio2ECsqL4e46A0NwwX7AaAmb4EALw_wcB&gclsrc=aw.ds). In Chrome, go to `Settings -> About Chrome` and check the Chrome version *(Ex: 88)*. 
 2. Install chromedriver from [here](https://chromedriver.chromium.org/downloads). Make sure to download the chromedriver accordingly to your Chrome version. Since the program requires the location of the chromedriver, please be aware where the chromedriver is.
-## #3 Step: Run the script
+## #3 Login setup
+1. In order to successfully login to your Google account, you need to allow the program to access to you account. Please turn on "Less secure app access".
+![image](https://user-images.githubusercontent.com/45069462/110600193-035f8a00-81c7-11eb-9c73-fb712cb79816.png)
+
+## #4 Step: Run the script
 1. Note: There are various ways to run a Python script. The method below is just an example.
 2. Open `formfiller.py` by `IDLE`. Noting that `IDLE` is a basic IDE automatically installed while installing Python. The script of the `formfiller.py` should be readable.
 3. Press F5 from the keyboard button to run the script.
@@ -53,21 +57,14 @@ Delete the line  `option.add_argument("-headless")`.<br>
 
 
 # FAQ
-## Q: I messed up with the first three steps!
+## Q: I messed up with the first four steps!
 A: Use Google.
 ## Q: I'm using Windows and the chromedriver location does not work!
 A: For Windows, you need to put `.exe` at the end of the chromedriver file. For instance, `C:\user\Downloads\chromedriver\chromedriver.exe`<br/>For Mac or Linux, `.formatname` is not required.
 ### For Windows
-
 https://user-images.githubusercontent.com/45069462/110214161-bf2e6a00-7ee6-11eb-9af9-d7c64dce2110.mp4
-
 ### For Mac OS
-
-
 https://user-images.githubusercontent.com/45069462/110214256-1e8c7a00-7ee7-11eb-8f7b-1fcd32e7e84a.mp4
-
-
-
 
 <br/><br/>
 
