@@ -35,7 +35,7 @@ pip3 install selenium
 1. Install Chrome from [here](https://www.google.com/chrome/?brand=CHBD&brand=SZLF&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB6VQeMaSJShxbmZNnXguG7wwkxQgbd_ZItio2ECsqL4e46A0NwwX7AaAmb4EALw_wcB&gclsrc=aw.ds). In Chrome, go to `Settings -> About Chrome` and check the Chrome version *(Ex: 88)*. 
 2. Install chromedriver from [here](https://chromedriver.chromium.org/downloads). Make sure to download the chromedriver accordingly to your Chrome version. Since the program requires the location of the chromedriver, please be aware where the chromedriver is.
 ## #3 Login setup
-1. In order to successfully login to your Google account, you need to allow the program to access to you account. Please turn on "Less secure app access".
+1. In order to successfully login to your Google account, you need to allow the program to access to you account. Please turn on "Less secure app access".<br>
 ![image](https://user-images.githubusercontent.com/45069462/110600193-035f8a00-81c7-11eb-9c73-fb712cb79816.png)
 
 ## #4 Step: Run the script
